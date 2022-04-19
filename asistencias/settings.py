@@ -132,6 +132,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 try:
-    from .configuraciones_locales import *
+    from asistencias.configuraciones_locales import *
 except ImportError:
     raise Exception("El archivo de configuraciones locales es requerido para ejecutar este proyecto")
