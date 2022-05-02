@@ -6,8 +6,18 @@ from apps.persona.models import Persona
 
 
 class TipoAsistencia(ModeloBase):
+    DINERO = 'dinero'
+    COMIDA = 'comida'
+    CONSTRUCCION = 'material_construccion'
+    TIPOS = (
+        (DINERO, 'Dinero'),
+        (COMIDA, 'Comida'),
+        (CONSTRUCCION, 'Material para construccion')
+    )
+
     descripcion = models.CharField(max_length=150,
                                    unique=True)
+    tipo = models.CharField(max_length=25, choices=TIPOS, default=DINERO)
 
     def __str__(self):
         return self.descripcion
