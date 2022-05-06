@@ -35,8 +35,8 @@ class Programa(ModeloBase):
 
 
 class AsignacionBeneficio(ModeloBase):
-    programa = models.ForeignKey(Programa, on_delete=models.CASCADE)
-    persona = models.ForeignKey(Persona, on_delete=models.CASCADE)
+    programa = models.ForeignKey(Programa, on_delete=models.CASCADE, related_name='asignaciones_beneficios')
+    persona = models.ForeignKey(Persona, on_delete=models.CASCADE, related_name='asignaciones_beneficios')
     tipo_asistencia = models.ForeignKey(TipoAsistencia, on_delete=models.CASCADE)
     fecha_entrega = models.DateTimeField(default=datetime.today)
     cantidad = models.DecimalField(max_digits=8, decimal_places=2)

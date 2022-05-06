@@ -3,6 +3,7 @@ from rest_framework import viewsets
 from rest_framework.exceptions import ValidationError
 from rest_framework.mixins import CreateModelMixin, ListModelMixin, RetrieveModelMixin
 
+from .filters import ProgramaFilter
 from .models import Programa, AsignacionBeneficio, TipoAsistencia
 from .serializers import ProgramaSerializer, AsignacionBeneficioSerializer
 
@@ -11,6 +12,7 @@ class ProgramaViewSet(viewsets.ModelViewSet):
     queryset = Programa.objects.all()
     serializer_class = ProgramaSerializer
     filter_backends = [DjangoFilterBackend]
+    filterset_class = ProgramaFilter
     ordering_fields = ['fecha_inicio', 'nombre']
 
 
