@@ -6,8 +6,18 @@ from apps.persona.models import Persona
 
 
 class TipoAsistencia(ModeloBase):
+    DINERO = 'dinero'
+    COMIDA = 'comida'
+    CONSTRUCCION = 'material_construccion'
+    TIPOS = (
+        (DINERO, 'Dinero'),
+        (COMIDA, 'Comida'),
+        (CONSTRUCCION, 'Material para construccion')
+    )
+
     descripcion = models.CharField(max_length=150,
                                    unique=True)
+    tipo = models.CharField(max_length=25, choices=TIPOS, default=DINERO)
 
     def __str__(self):
         return self.descripcion
@@ -25,8 +35,10 @@ class Programa(ModeloBase):
 
 
 class AsignacionBeneficio(ModeloBase):
-    programa = models.ForeignKey(Programa, on_delete=models.CASCADE)
-    persona = models.ForeignKey(Persona, on_delete=models.CASCADE)
+    programa = models.ForeignKey(Programa, on_delete=models.CASCADE,
+                                 related_name='asignaciones_beneficios')
+    persona = models.ForeignKey(Persona, on_delete=models.CASCADE,
+                                related_name='asignaciones_beneficios')
     tipo_asistencia = models.ForeignKey(TipoAsistencia, on_delete=models.CASCADE)
     fecha_entrega = models.DateTimeField(default=datetime.today)
     cantidad = models.DecimalField(max_digits=8, decimal_places=2)
