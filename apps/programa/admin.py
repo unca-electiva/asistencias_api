@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from apps.programa.models import TipoAsistencia
+from .models import TipoAsistencia
 
 
 @admin.register(TipoAsistencia)

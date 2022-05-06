@@ -1,6 +1,6 @@
 from django_filters import rest_framework as filters
 
-from apps.persona.models import Persona
+from .models import Persona
 
 
 class PersonaFilter(filters.FilterSet):

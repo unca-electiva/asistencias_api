@@ -1,7 +1,7 @@
 from django.db.models import Count
 from django_filters import rest_framework as filters
 
-from apps.programa.models import Programa
+from .models import Programa
 
 
 class ProgramaFilter(filters.FilterSet):
