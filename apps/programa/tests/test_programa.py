@@ -12,3 +12,6 @@ def test_api_lista_programas(api_client, crear_programas, get_default_test_user)
     assert response.status_code == 200
     json_data = response.json()
 
+    assert len(json_data) == 2
+    assert json_data[0]['nombre'] == 'COVID'
+    assert json_data[1]['nombre'] == 'ASISTENCIA ALIMENTICIA'
