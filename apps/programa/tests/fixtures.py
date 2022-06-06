@@ -32,7 +32,8 @@ def crear_programa(nombre, fecha_inicio, fecha_fin, requisitos, *tipo_asistencia
 def crear_programas():
     programa1 = crear_programa('COVID', '2022-05-06', None, None,
                                crear_tipo_asistencia('Ayuda monetaria', 'dinero'),
-                               crear_tipo_asistencia('Ayuda de materiales', 'material_construccion'))
+                               crear_tipo_asistencia('Ayuda de materiales', 'material_construccion'),
+                               crear_tipo_asistencia('Ayuda alimentaria', 'comida'))
 
     programa2 = crear_programa('ASISTENCIA ALIMENTICIA', '2022-05-06', None, None,
                                crear_tipo_asistencia('Ayuda alimentaria', 'comida'),
