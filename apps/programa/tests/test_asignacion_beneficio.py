@@ -9,7 +9,8 @@ from apps.persona.tests.fixtures import crear_persona
     'tipo_asistencia, cantidad, codigo_http, total_registros, loguear_usuario',
     [(TipoAsistencia.DINERO, 2, 401, 0, False),
      (TipoAsistencia.DINERO, 3, 201, 1, True),
-     (TipoAsistencia.COMIDA, 2, 400, 0, True)]
+     (TipoAsistencia.COMIDA, 2, 400, 0, True),
+     (TipoAsistencia.COMIDA, 1, 201, 1, True)]
 )
 @pytest.mark.django_db
 def test_api_creacion_asignacion_beneficio(api_client, get_default_test_user, crear_programas, crear_persona,
