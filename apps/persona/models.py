@@ -1,3 +1,5 @@
+from uuid import uuid4
+
 from django.db import models
 
 
@@ -6,6 +8,7 @@ class Persona(models.Model):
         ('masculino', 'Masculino'),
         ('femenino', 'Femenino'),
     )
+    uuid = models.UUIDField(unique=True, editable=False, default=uuid4)
     dni = models.CharField(max_length=8, unique=True)
     nombre_completo = models.CharField(max_length=200)
     fecha_nacimiento = models.DateField()

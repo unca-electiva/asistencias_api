@@ -10,6 +10,8 @@ class PersonaSerializer(serializers.ModelSerializer):
 
 
 class EstadoSaludSerializer(serializers.ModelSerializer):
+    #persona = serializers.StringRelatedField()
+
     class Meta:
         model = EstadoSalud
         fields = '__all__'
