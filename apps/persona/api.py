@@ -13,6 +13,7 @@ class PersonaViewSet(viewsets.ModelViewSet):
     filter_backends = [DjangoFilterBackend]
     filterset_class = PersonaFilter
     ordering_fields = ['dni', 'nombre_completo']
+    lookup_field = 'uuid'
 
 
 class EstadoSaludViewSet(viewsets.ModelViewSet):

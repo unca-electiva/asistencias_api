@@ -5,7 +5,7 @@ from .models import Persona, EstadoSalud
 class PersonaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Persona
-        fields = ['dni', 'nombre_completo', 'fecha_nacimiento',
+        fields = ['uuid', 'dni', 'nombre_completo', 'fecha_nacimiento',
                   'sexo', 'domicilio']
 
 
