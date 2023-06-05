@@ -5,7 +5,7 @@ from apps.persona.models import Persona
 
 @pytest.fixture
 def crear_persona():
-    persona,_ = Persona.objects.get_or_create(
+    persona, _ = Persona.objects.get_or_create(
         dni='27563896',
         nombre_completo='Laura Gonzalez',
         defaults={

@@ -1,6 +1,5 @@
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import viewsets
-from rest_framework.generics import ListCreateAPIView
 
 from .filters import PersonaFilter
 from .models import Persona, EstadoSalud
@@ -20,7 +19,3 @@ class EstadoSaludViewSet(viewsets.ModelViewSet):
     queryset = EstadoSalud.objects.all()
     serializer_class = EstadoSaludSerializer
 
-
-class EstadoSaludListCreateView(ListCreateAPIView):
-    queryset = EstadoSalud.objects.all()
-    serializer_class = EstadoSaludSerializer

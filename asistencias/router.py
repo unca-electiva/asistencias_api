@@ -1,7 +1,6 @@
 from django.urls import path
 from rest_framework import routers
 from apps.persona import api as api_persona
-from apps.persona.api import EstadoSaludListCreateView
 from apps.programa import api as api_programa
 
 
