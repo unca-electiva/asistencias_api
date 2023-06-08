@@ -11,7 +11,7 @@ from apps.programa.api import AsignacionBeneficioListCreateView
 router = routers.DefaultRouter()
 
 # Registrar los ViewSet
-router.register('persona', api_persona.PersonaViewSet)
+router.register(prefix='persona', viewset=api_persona.PersonaViewSet)
 router.register('estado-salud', api_persona.EstadoSaludViewSet)
 router.register('programa', api_programa.ProgramaViewSet)
 router.register('asignacion-beneficio', api_programa.AsignacionBeneficioViewSet)
