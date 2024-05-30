@@ -1,5 +1,5 @@
 from django_filters.rest_framework import DjangoFilterBackend
-from rest_framework import viewsets
+from rest_framework import viewsets, filters
 from rest_framework.generics import ListCreateAPIView
 
 from .filters import PersonaFilter
@@ -10,7 +10,7 @@ from .serializers import PersonaSerializer, EstadoSaludSerializer
 class PersonaViewSet(viewsets.ModelViewSet):
     queryset = Persona.objects.all()
     serializer_class = PersonaSerializer
-    filter_backends = [DjangoFilterBackend]
+    filter_backends = [DjangoFilterBackend, filters.OrderingFilter]
     filterset_class = PersonaFilter
     ordering_fields = ['dni', 'nombre_completo']
     lookup_field = 'uuid'
